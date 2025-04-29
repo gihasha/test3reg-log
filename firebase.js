@@ -1,7 +1,8 @@
 // firebase.js
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+import { initializeApp } from "firebase/app";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCOLVBP5F-Mf6F1bgLFRntPxgyq8WVl7Ts",
   authDomain: "login-paje-2ee80.firebaseapp.com",
@@ -12,31 +13,8 @@ const firebaseConfig = {
   measurementId: "G-GRG32CNTPR"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-document.getElementById("signup-btn").addEventListener("click", () => {
-  const email = document.getElementById("signup-email").value;
-  const password = document.getElementById("signup-password").value;
-
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      alert("Signup successful!");
-    })
-    .catch((error) => {
-      alert("Signup failed: " + error.message);
-    });
-});
-
-document.getElementById("login-btn").addEventListener("click", () => {
-  const email = document.getElementById("login-email").value;
-  const password = document.getElementById("login-password").value;
-
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      alert("Login successful!");
-    })
-    .catch((error) => {
-      alert("Login failed: " + error.message);
-    });
-});
+export { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword };
