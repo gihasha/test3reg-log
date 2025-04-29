@@ -21,10 +21,11 @@ document.getElementById("signup-btn").addEventListener("click", () => {
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      alert("Signup successful!");
+      const user = userCredential.user;
+      console.log("User signed up:", user);
     })
     .catch((error) => {
-      alert("Signup failed: " + error.message);
+      console.error(error);
     });
 });
 
@@ -34,9 +35,10 @@ document.getElementById("login-btn").addEventListener("click", () => {
 
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      alert("Login successful!");
+      const user = userCredential.user;
+      console.log("User logged in:", user);
     })
     .catch((error) => {
-      alert("Login failed: " + error.message);
+      console.error(error);
     });
 });
