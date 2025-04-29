@@ -1,20 +1,11 @@
-// firebase.js
-import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+const sign_in_btn = document.querySelector("#sign-in-btn");
+const sign_up_btn = document.querySelector("#sign-up-btn");
+const container = document.querySelector(".container");
 
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCOLVBP5F-Mf6F1bgLFRntPxgyq8WVl7Ts",
-  authDomain: "login-paje-2ee80.firebaseapp.com",
-  projectId: "login-paje-2ee80",
-  storageBucket: "login-paje-2ee80.firebasestorage.app",
-  messagingSenderId: "741680912902",
-  appId: "1:741680912902:web:c0ebc9cd06c81647b58187",
-  measurementId: "G-GRG32CNTPR"
-};
+sign_up_btn.addEventListener("click", () => {
+  container.classList.add("sign-up-mode");
+});
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-export { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword };
+sign_in_btn.addEventListener("click", () => {
+  container.classList.remove("sign-up-mode");
+});
