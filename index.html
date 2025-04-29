@@ -5,70 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css" />
-  <title>Sign in / Sign up Form</title>
+  <title>Login / Signup</title>
 </head>
 <body>
   <div class="container">
     <div class="forms-container">
       <div class="signin-signup">
-        <!-- SignIn Form -->
-        <form action="#" class="sign-in-form">
+        <form class="sign-in-form">
           <h2 class="title">Sign in</h2>
           <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input type="email" id="login-email" placeholder="Email" required />
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="login-email" placeholder="Email" />
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" id="login-password" placeholder="Password" required />
+            <input type="password" id="login-password" placeholder="Password" />
           </div>
-          <input type="submit" value="Login" class="btn solid" id="login-btn" />
+          <input type="button" value="Login" class="btn solid" id="login-btn" />
         </form>
 
-        <!-- SignUp Form -->
-        <form action="#" class="sign-up-form">
+        <form class="sign-up-form">
           <h2 class="title">Sign up</h2>
           <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input type="text" id="signup-username" placeholder="Username" required />
-          </div>
-          <div class="input-field">
             <i class="fas fa-envelope"></i>
-            <input type="email" id="signup-email" placeholder="Email" required />
+            <input type="email" id="signup-email" placeholder="Email" />
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" id="signup-password" placeholder="Password" required />
+            <input type="password" id="signup-password" placeholder="Password" />
           </div>
-          <input type="submit" value="Sign up" class="btn" id="signup-btn" />
+          <input type="button" class="btn" value="Sign up" id="signup-btn" />
         </form>
       </div>
     </div>
 
-    <!-- Panels (for switching sign-in/sign-up) -->
     <div class="panels-container">
       <div class="panel left-panel">
         <div class="content">
-          <h3>New here?</h3>
-          <p>Sign up to create an account!</p>
-          <button class="btn transparent" id="sign-up-btn">
-            Sign up
-          </button>
+          <h3>New here ?</h3>
+          <p>Create your account easily</p>
+          <button class="btn transparent" id="sign-up-btn">Sign up</button>
         </div>
       </div>
       <div class="panel right-panel">
         <div class="content">
-          <h3>One of us?</h3>
-          <p>Sign in to your account!</p>
-          <button class="btn transparent" id="sign-in-btn">
-            Sign in
-          </button>
+          <h3>Already have an account?</h3>
+          <p>Login to continue</p>
+          <button class="btn transparent" id="sign-in-btn">Sign in</button>
         </div>
       </div>
     </div>
   </div>
-
+  <!-- Firebase -->
+  <script type="module" src="firebase.js"></script>
   <script src="app.js"></script>
-  <script src="firebase.js"></script>
 </body>
 </html>
